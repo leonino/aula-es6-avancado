@@ -15,7 +15,9 @@ describe('Math class', function () {
     assert.equal(mathy.sum(number1, 5), number1 + 5);
   });
 
-  it('Multiply two numbers', function (done) {
+  // Com o uso de it.only() apenas este teste sera executado.
+  // e os demais são ignorados...
+  it.only('Multiply two numbers', function (done) {
     this.timeout(1500);
     mathy.multiply(5, 5, (value) => {
       assert.equal(value, 25);
@@ -23,6 +25,7 @@ describe('Math class', function () {
     })
   });
 
+  // Esse teste não será executado e ficará como pendente
   it.skip('Retornar numbers Aleatórios', function () {
     let number2 = mathy.aleatorio(10);
 
@@ -33,6 +36,7 @@ describe('Math class', function () {
     assert.ok(ok);
   });
 
+  // teste a ser implementado, também aparece como pendente. 
   it('teste pendente');
 
 });

@@ -23,7 +23,7 @@ describe('Math class', function () {
     })
   });
 
-  it('Retornar numbers Aleatórios', function () {
+  it.skip('Retornar numbers Aleatórios', function () {
     let number2 = mathy.aleatorio(10);
 
     let ok = true;
@@ -32,5 +32,7 @@ describe('Math class', function () {
     ok = ok && (number1 != number2);
     assert.ok(ok);
   });
+
+  it('teste pendente');
 
 });

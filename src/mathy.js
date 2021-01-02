@@ -1,13 +1,15 @@
 class Mathy {
-  sum = function sum(x,y) {
+  sum(x,y) {
    return x + y;
   }
 
-  multiply = function multiply(x, y) {
-    return x * y;
+  multiply(x, y, callback) {
+    setTimeout(() => {
+      callback(x * y);
+    }, 1000);
   }
 
-  aleatorio = function aleatorio(number) {
+  aleatorio(number) {
     return Math.random() * number;
   }
 }

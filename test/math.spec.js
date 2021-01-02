@@ -12,11 +12,15 @@ describe('Math class', function () {
   });
 
   it('Sum two numbers', function () {
-    assert.equal(mathy.sum(number1, 5), number1+5);
+    assert.equal(mathy.sum(number1, 5), number1 + 5);
   });
 
-  it('Multiply two numbers', function () {
-    assert.equal(mathy.multiply(5, number1), 5*number1);
+  it('Multiply two numbers', function (done) {
+    this.timeout(1500);
+    mathy.multiply(5, 5, (value) => {
+      assert.equal(value, 25);
+      done();
+    })
   });
 
   it('Retornar numbers Aleatórios', function () {

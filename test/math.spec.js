@@ -1,10 +1,13 @@
 const assert = require('assert');
 const Mathy = require('../src/mathy.js');
+const expect = require('chai').expect;
+
+let number1;
 
 describe('Math class', function () {
 
   const mathy = new Mathy();
-  let number1 = 0;
+
   //hooks
   // before, beforeEach, after, afterEach
   this.beforeAll(function () {
@@ -17,10 +20,10 @@ describe('Math class', function () {
 
   // Com o uso de it.only() apenas este teste sera executado.
   // e os demais são ignorados...
-  it.only('Multiply two numbers', function (done) {
+  it('Multiply two numbers', function (done) {
     this.timeout(1500);
     mathy.multiply(5, 5, (value) => {
-      assert.equal(value, 25);
+      expect(value).to.equal(25);
       done();
     })
   });

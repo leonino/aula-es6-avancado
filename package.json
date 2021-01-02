@@ -1,0 +1,23 @@
+{
+  "name": "aula-es6-avancado",
+  "version": "1.0.0",
+  "description": "Bootcamp EFG 01/2021 - Curso de Desenvolvimento Avançado com JavaScript ES6",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonino/aula-es6-avancado.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonino/aula-es6-avancado/issues"
+  },
+  "homepage": "https://github.com/leonino/aula-es6-avancado#readme",
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  }
+}

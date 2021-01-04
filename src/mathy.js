@@ -1,6 +1,6 @@
 class Mathy {
-  sum(x,y) {
-   return x + y;
+  sum(...arg) {
+    return arg.reduce((total, number) => total += number, 0);
   }
 
   multiply(x, y, callback) {
@@ -11,6 +11,10 @@ class Mathy {
 
   aleatorio(number) {
     return Math.random() * number;
+  }
+
+  printSum(req, res) {
+    console.log(res.load('index',this.sum(...req.data)));
   }
 }
 

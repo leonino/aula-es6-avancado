@@ -62,7 +62,7 @@ Existe diversas outras maneira de definir uma função: Callback de uma outra fu
 2. Default Function Arguments
 3. Enhanced Objects Literals
 
-### Arrows Functions
+### Arrows Functions, Default Function Arguments e destruction
 
 Uma expressão arrow function possui uma sintaxe mais curta quando comparada a uma expressão de função (function expression) e não tem seu próprio **this**, **arguments**, **super** ou **new.target**. Estas expressões de funções são melhor aplicadas para funções que não sejam métodos, e elas não podem ser usadas como construtoras (constructors).
 
@@ -85,11 +85,7 @@ A lista de parâmetros para uma função sem parâmetros deve ser escrita com um
 () => { statements }
 ```
 #### Sintaxe Avançada
-// Envolva o corpo da função em parênteses para retornar uma expressão literal de objeto:
 
-```
-params => ({foo: bar})
-```
 Parâmetros **rest** (rest parameters) e parâmetros padrões (default parameters) também são suportados
 ```
 (param1, param2, ...rest) => { statements }
@@ -98,8 +94,8 @@ Parâmetros **rest** (rest parameters) e parâmetros padrões (default parameter
 
 **Desestruturação** (destructuring) dentro da lista de parâmetros também é suportado
 ```
-var soma = ([a, b] = [1, 2], {x: c} = {x: a + b}) => a + b + c;
-soma(); // 6
+var soma = ([a, b] = [15, 35], {x: c} = {x: a + b}) => a + b + c;
+soma(); // 100
 ```
 veja mais sobre [Desestruturação](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
@@ -122,19 +118,18 @@ array.map(function(elemento) {
 });
 ```
 
-Agora vamos reescrever a função como uma **Arrow Function**! e veja que o retorno será o mesmo: [6, 5, 4, 6]
+Agora vamos reescrever a função como uma **Arrow Function** e veremos que o retorno será o mesmo: [6, 5, 4, 6]
 ```
 array.map((array) => {
   return elemento.length;
 });
 ```
 
-Quando só existe um parâmetro, podemos remover os parênteses envolvendo os parâmetros e o return assim usaremos cada vez menos código e retorno obtido será o mesmo: [6, 5, 4, 6]
+Quando só existe um parâmetro, podemos remover os parênteses envolvendo os parâmetros e também remover o return quando a expressão for em uma unica linha, assim usaremos cada vez menos código e retorno obtido continuará sendo o mesmo: [6, 5, 4, 6]
 ```
 array.map(elemento => elemento.length);
 ```
 ## Estrutura básica dos testes usando "Mocha"
-```
 
 Crie uma pasta para o seu projeto, e inicie o aplicativo neste exemplo vamos o NODE e JS com ECMA 6;
 

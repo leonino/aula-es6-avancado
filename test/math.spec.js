@@ -81,8 +81,13 @@ describe('Math class', function () {
       }
     };
 
+    //Isso pode ser usado em APIs
+    
+    //Espionar uma função
     //sinon.spy(res, 'load');
+    //Substituir a função e espionar
     //sinon.stub(res, 'load');
+    //Subitituir a função, mudar o retorno e espionar
     sinon.stub(res, 'load').returns('xpto');
 
     mathy.printSum(req, res);
